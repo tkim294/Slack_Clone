@@ -6,13 +6,16 @@ $window.scroll(function () {
   if (screen.width > 1024) {
     if ($window.scrollTop() >= distance) {
       // Your div has reached the top
-      $("#main-nav").addClass("is-fixed");
+      $("#main-nav").removeClass("is-dismissed").addClass("is-fixed");
       $("#main-nav-shadow-div").css(
         "box-shadow",
         "box-shadow: 0 4px 40px rgb(0 0 0 / 8%);"
       );
     } else {
-      $("#main-nav").removeClass("is-fixed");
+      $("#main-nav").addClass("is-dismissed");
+      setTimeout(function () {
+        $("#main-nav").removeClass("is-fixed");
+      }, 100);
       $("#main-nav-shadow-div").css("box-shadow", "none");
     }
   }
