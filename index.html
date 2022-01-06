@@ -29,6 +29,13 @@
       crossorigin="anonymous"
     ></script>
 
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
     <title>Slack Solution Clone</title>
   </head>
   <body>
@@ -308,7 +315,20 @@
         <div class="c-nav-menu-container">
           <nav class="c-nav-menu-list">
             <ul class="nav-level-1">
-              <li class="listitem"><a href="#">Product</a></li>
+              <li class="listitem has-dropdown">
+                <span id="mobile-submenu-button" style="cursor: pointer">
+                  Product
+                </span>
+                <ul class="dropdown-contents">
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Channels</a></li>
+                  <li><a href="#">Digital HQ</a></li>
+                  <li><a href="#">Integration</a></li>
+                  <li><a href="#">Security</a></li>
+                  <li><a href="#">Slack Connect</a></li>
+                  <li><a href="#">Customers</a></li>
+                </ul>
+              </li>
               <li class="listitem"><a href="#">Solutions</a></li>
               <li class="listitem"><a href="#">Enterprise</a></li>
               <li class="listitem"><a href="#">Resources</a></li>
@@ -319,7 +339,7 @@
         </div>
         <div class="c-nav-button-container">
           <div class="c-feature-grid">
-            <a href="#" class="c-button v-secondary">Sign in</a>
+            <a href="#" class="c-button v-secondary">Talk to sales</a>
             <a href="#" class="c-button v-primary">Download slack</a>
           </div>
         </div>
@@ -1389,7 +1409,74 @@
         </div>
       </section>
     </main>
-    <div></div>
+    <div id="help-chat-window" class="chat-window hide">
+      <div class="chat-header">
+        <i class="fas fa-user-circle" style="color: #e4c3e7"></i>
+        <span>Slack Assistant</span>
+        <button class="is-mobile-close" onclick="closeChatWindow()">
+          <svg width="16" height="16" viewBox="0 0 23 23" fill="none">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="white"
+              d="M9.34583 11.2L0.384011 2.23818C-0.128004 1.72617 -0.128004 0.896026 0.384011 0.384011C0.896026 -0.128004 1.72617 -0.128004 2.23818 0.384011L11.2 9.34583L20.1618 0.384011C20.6738 -0.128004 21.504 -0.128004 22.016 0.384011C22.528 0.896026 22.528 1.72617 22.016 2.23818L13.0542 11.2L22.016 20.1618C22.528 20.6738 22.528 21.504 22.016 22.016C21.504 22.528 20.6738 22.528 20.1618 22.016L11.2 13.0542L2.23818 22.016C1.72617 22.528 0.896026 22.528 0.384011 22.016C-0.128003 21.504 -0.128003 20.6738 0.384011 20.1618L9.34583 11.2Z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="chat-body">
+        <div class="chat-body-date">
+          <span id="current-date">Today 3:37 PM</span>
+        </div>
+        <div class="chat-body--conversations">
+          <div class="conversation-bot">
+            <i class="fas fa-user-circle" style="color: #e4c3e7"></i>
+            <div class="conversation conversation-secondary">
+              <span>
+                We live in a work-from-anywhere world. Ready to build your own
+                digital HQ?
+              </span>
+            </div>
+          </div>
+          <div class="conversation-user">
+            <div class="conversation conversation-primary">
+              <span> Yes, I'd like to chat with a sales expert </span>
+            </div>
+            <div class="conversation conversation-primary">
+              <span> Tell me more about Slack solutions </span>
+            </div>
+            <div class="conversation conversation-primary">
+              <span> I need customer support </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <span><a href="#">View our Privacy Policy</a></span>
+      </div>
+    </div>
+    <div class="chat-window-controller">
+      <div class="chat-controller-icon--open" onclick="openChatWindow()">
+        <svg width="24" height="24" viewBox="0 0 20 20">
+          <path
+            fill="#ffffff"
+            d="M4.583 14.894l-3.256 3.78c-.7.813-1.26.598-1.25-.46a10689.413 10689.413 0 0 1 .035-4.775V4.816a3.89 3.89 0 0 1 3.88-3.89h12.064a3.885 3.885 0 0 1 3.882 3.89v6.185a3.89 3.89 0 0 1-3.882 3.89H4.583z"
+          ></path>
+        </svg>
+      </div>
+      <div class="chat-controller-icon--close hide" onclick="closeChatWindow()">
+        <svg
+          width="30"
+          height="30"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-255 347 100 100"
+        >
+          <path
+            d="M-160.4 434.2l-37.2-37.2 37.1-37.1-7-7-37.1 37.1-37.1-37.1-7 7 37.1 37.1-37.2 37.2 7.1 7 37.1-37.2 37.2 37.2"
+          ></path>
+        </svg>
+      </div>
+    </div>
     <script src="myscript.js"></script>
   </body>
 </html>

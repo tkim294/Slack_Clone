@@ -129,6 +129,10 @@ function closeMobileMenu() {
   setTimeout(function () {
     $("#main-nav-mobile").removeClass("is-open");
   }, 10);
+
+  // Close product submenu
+  $("#mobile-submenu-button").removeClass("active");
+  $(".c-nav-mobile .listitem .dropdown-contents").removeClass("is-expanded");
 }
 
 /* Close mobile menu when resize to desktop
@@ -151,3 +155,30 @@ $(window).resize(function () {
     }
   }
 });
+
+// Click open sub menu on mobile
+$(document).on("click", "#mobile-submenu-button", function () {
+  console.log("click mobile");
+  $("#mobile-submenu-button").toggleClass("active");
+  $(".c-nav-mobile .listitem .dropdown-contents").toggleClass("is-expanded");
+});
+
+// open chat window
+function openChatWindow() {
+  $(".chat-window-controller .chat-controller-icon--open").addClass("hide");
+  $(".chat-window-controller .chat-controller-icon--close").removeClass("hide");
+  $("#help-chat-window").removeClass("hide");
+  // if (screen.width < 1024) {
+  //   $(".chat-window-controller").addClass("hide");
+  // }
+}
+
+// close chat window
+function closeChatWindow() {
+  $(".chat-window-controller .chat-controller-icon--open").removeClass("hide");
+  $(".chat-window-controller .chat-controller-icon--close").addClass("hide");
+  $("#help-chat-window").addClass("hide");
+  // if (screen.width < 1024) {
+  //   $(".chat-window-controller").removeClass("hide");
+  // }
+}
