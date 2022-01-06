@@ -885,11 +885,16 @@ li.listitem > a:hover {
   font-size: 0.8rem;
 }
 
-.chat-window .chat-footer {
+.chat-window {
   display: flex;
+  flex-direction: column;
+}
+
+.chat-window .chat-footer {
   position: absolute;
-  bottom: 1rem;
-  left: 35%;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .chat-window .chat-footer > span > a {
